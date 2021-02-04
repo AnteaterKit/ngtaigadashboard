@@ -1,0 +1,156 @@
+<div  style="background: #cecece;" class="tui-container tui-container_adaptive">
+  <div class="tui-row tui-row_adaptive">
+    <div class="tui-col tui-text_h1 dashboard-text">
+      Taiga Dashboard
+    </div>
+  </div>
+  <div class="tui-row tui-row_adaptive">
+    <div class="tui-col_xs-12 tui-col_s-6 tui-col_sm-6 tui-col_md-3 tui-col_lg-3">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Total sales</h3>
+          <div>
+            <app-island-detail>
+            </app-island-detail>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+    <div class="tui-col_xs-12 tui-col_s-6 tui-col_sm-6 tui-col_md-3 tui-col_lg-3">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Total profit</h3>
+          <div>
+            <app-island-detail [amount]='5977' [percentValue]='0.722'>
+            </app-island-detail>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+    <div class="tui-col_xs-12 tui-col_s-6 tui-col_sm-6 tui-col_md-3 tui-col_lg-3">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Before taxes</h3>
+          <div>
+            <app-island-detail [amount]='4499' [percentValue]='0.322'>
+            </app-island-detail>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+    <div class="tui-col_xs-12 tui-col_s- tui-col_sm-6 tui-col_md-3 tui-col_lg-3">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">After taxes</h3>
+          <div>
+            <app-island-detail [amount]='2213' [isIncrease]='false' [percentValue]='0.122'>
+            </app-island-detail>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tui-container tui-container_adaptive">
+  <div class="tui-row tui-row_adaptive">
+    <div class="tui-col_xs-12 tui-col_s-12 tui-col_sm-6 tui-col_md-6 tui-col_lg-6">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Line chart</h3>
+          <tui-axes class="axes" [verticalLines]="4" [horizontalLines]="2">
+            <tui-line-chart [x]="0" [y]="0" [width]="400" [height]="200" [dots]="true" [value]="value"
+              [xStringify]="stringify" [yStringify]="stringify"></tui-line-chart>
+          </tui-axes>
+        </tui-island>
+      </div>
+    </div>
+    <div class="tui-col_xs-12 tui-col_s-12 tui-col_sm-6 tui-col_md-6 tui-col_lg-6">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Bar chart</h3>
+          <tui-axes class="axes">
+            <tui-bar-chart [max]="350" [value]="value"></tui-bar-chart>
+          </tui-axes>
+        </tui-island>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tui-container tui-container_adaptive">
+  <div class="tui-row tui-row_adaptive">
+    <div class="tui-col_xs-12 tui-col_s-12 tui-col_sm-6 tui-col_md-6 tui-col_lg-6">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Pie</h3>
+          <div class="dash-chart-wrap">
+            <tui-pie-chart class="tui-space_right-4" size="xl" [value]="valuePie"></tui-pie-chart>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+    <div class="tui-col_xs-12 tui-col_s-12 tui-col_sm-6 tui-col_md-6 tui-col_lg-6">
+      <div class="dummy">
+        <tui-island>
+          <h3 class="tui-island__title">Ring</h3>
+          <div class="dash-chart-wrap">
+            <tui-ring-chart class="tui-space_right-4" size="xl" [value]="valuePie"></tui-ring-chart>
+          </div>
+        </tui-island>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="tui-container tui-container_adaptive">
+  <div class="tui-row tui-row_adaptive">
+    <div class="tui-col_xs-12 tui-col_s-12 tui-col_sm-12 tui-col_md-12 tui-col_lg-12">
+      <div class="dummy">
+        <tui-island>
+          <table class="tui-table">
+            <tbody>
+              <tr class="tui-table__tr">
+                <th class="tui-table__th">
+                 
+                </th>
+                <th class="tui-table__th">Title</th>
+                <th class="tui-table__th">Author</th>
+                <th class="tui-table__th">Platform</th>
+              </tr>
+              <tr class="tui-table__tr">
+                <td class="tui-table__td"></td>
+                <td class="tui-table__td">How to cook RxJS in an Angular app</td>
+                <td class="tui-table__td">Roman Sedov</td>
+                <td class="tui-table__td">angular.institute</td>
+              </tr>
+              <tr class="tui-table__tr">
+                <td class="tui-table__td"></td>
+                <td class="tui-table__td">
+                  Taking down the Emperor: Declarative approach
+                </td>
+                <td class="tui-table__td">Alex Inkin</td>
+                <td class="tui-table__td">angular.institute</td>
+              </tr>
+              <tr class="tui-table__tr">
+                <td class="tui-table__td"></td>
+                <td class="tui-table__td">
+                  The 10 best Angular tips selected by the community
+                </td>
+                <td class="tui-table__td">Roman Sedov</td>
+                <td class="tui-table__td">indepth.dev</td>
+              </tr>
+              <tr class="tui-table__tr">
+                <td class="tui-table__td"></td>
+                <td class="tui-table__td">Agnostic components in Angular</td>
+                <td class="tui-table__td">Alex Inkin</td>
+                <td class="tui-table__td">indepth.dev</td>
+              </tr>
+            </tbody>
+          </table>
+        </tui-island>
+      </div>
+    </div>
+  </div>
+</div>

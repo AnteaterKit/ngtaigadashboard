@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TUI_DEFAULT_STRINGIFY } from '@taiga-ui/cdk';
+import { TuiPoint } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-root',

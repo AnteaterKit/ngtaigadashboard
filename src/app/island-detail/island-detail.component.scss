@@ -1,0 +1,18 @@
+.green-text {
+  color: green;
+}
+
+.red-text {
+  color: red;
+}
+
+
+.detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__item {
+    padding: 12px;
+  }
+}

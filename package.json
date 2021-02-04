@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.1.0",
+    "@angular/cdk": "^11.1.1",
     "@angular/common": "~11.1.0",
     "@angular/compiler": "~11.1.0",
     "@angular/core": "~11.1.0",
@@ -19,6 +20,13 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "@ng-web-apis/common": "^1.9.0",
+    "@ng-web-apis/speech": "^1.0.0",
+    "@taiga-ui/addon-charts": "^2.2.1",
+    "@taiga-ui/cdk": "^2.2.1",
+    "@taiga-ui/core": "^2.2.1",
+    "@taiga-ui/icons": "^2.2.1",
+    "@taiga-ui/kit": "^2.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
