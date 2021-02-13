@@ -1,20 +1,17 @@
-<div style="padding: 24px; font-size: 16px; padding: 24px;
-font-size: 16px;">
-  <div style="margin: 16px;">
+<div class="speak-wrapper">
+  <div class="speak-btns">
     <button tuiButton type="button" (click)='pause()'>Start</button>
     <button style="margin-left: 16px;" tuiButton type="button" (click)='pause()'>Stop</button>
   </div>
-  <div #scrollRef style="max-width: 680px; margin-left: auto;
-  margin-right: auto;     max-height: 100vh;
-    overflow: scroll;">
+  <div #scrollRef class="speak-content">
     <div *ngFor='let item of texts; let i = index'>
-      <div #item style="margin: 24px;">
-        <div style="width: 100%; height: 100%;" [waTextToSpeech]="text | waUtterance: options"
+      <div #item class="speak-content__item">
+        <div class="speak-content__item__speach" [waTextToSpeech]="text | waUtterance: options"
           [waTextToSpeechPaused]='paused' (waTextToSpeechBoundary)="onWaTextToSpeechBoundary($event)"
           (waTextToSpeechEnd)="onEnd(item, i)">
         </div>
-        <div style="background-color: #f4dfff80; padding: 4px;" *ngIf='i === selectedBlock; else simpleItem' highlight
-          [currentCharPosition]="currentPosition">
+        <div *ngIf='i === selectedBlock; else simpleItem' highlight [currentCharPosition]="currentPosition"
+          class="speak-content__item__text">
           {{item}}
         </div>
         <ng-template #simpleItem>

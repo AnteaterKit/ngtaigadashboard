@@ -9,15 +9,14 @@ import { CurrentCharPosition } from './highlight.directive';
   styleUrls: ['./app-speaker.component.scss']
 })
 export class AppSpeakerComponent {
-  @ViewChild('scrollRef')
-  scrollRef!: ElementRef;
+  @ViewChild('scrollRef') scrollRef!: ElementRef;
   @ViewChildren('item')
   items!: QueryList<ElementRef>;
   voice = null;
   paused = true;
   currentPosition: CurrentCharPosition | undefined;
-  selectedBlock: number;
-  prevSelectedBlock: number;
+  selectedBlock = 0;
+  prevSelectedBlock = 0;
   text = 'Web Audio API has been around for a while now and there are lots of great articles about it. So I will not go into details regarding the API. What I will tell you is Web Audio can be Angular’s best friend if you introduce it well. So let’s do this.';
   texts: any = [];
   constructor(@Inject(TuiScrollService) private readonly scrollService: TuiScrollService) {
@@ -30,9 +29,6 @@ export class AppSpeakerComponent {
     this.texts.push('To declaratively link our nodes into graph we will add AUDIO_NODE token. All our directives will provide it.');
     this.texts.push('Directives take closest node from DI and connect with it. We’ve also added exportAs — it allows us to grab node with template reference variables. Now we can build graph with template:');
     this.texts.push('To be able to create loops like in the echo example above Dependency Injection is not enough. We will make a special directive. It would allow us to pass node as input to connect to it:');
-
-    this.selectedBlock = 0;
-    this.prevSelectedBlock = 0;
   }
 
 
@@ -51,7 +47,6 @@ export class AppSpeakerComponent {
   }
 
   onWaTextToSpeechBoundary($event: SpeechSynthesisEvent): void {
-    // console.log($event);
     this.updateHighlight($event);
 
     if (this.texts[this.selectedBlock].length === $event.charIndex + 1) {
@@ -77,12 +72,6 @@ export class AppSpeakerComponent {
     if (this.prevSelectedBlock === this.selectedBlock) {
       return;
     }
-
-
-    const element = this.items.get(this.selectedBlock);
-    const wrapperRect = nativeElement.getClientRects()[0];
-    const currentRect = element?.nativeElement.getClientRects()[0];
-    console.log(wrapperRect, currentRect);
     let top = 0;
     for (let index = 0; index < this.selectedBlock; index++) {
       const item = this.items.get(index);
@@ -91,13 +80,8 @@ export class AppSpeakerComponent {
     this.scrollService
       .scroll$(nativeElement, top, 0, 500)
       .subscribe();
-
   }
-
-
-
   pause(): void {
-    console.log(this.paused);
     this.paused = !this.paused;
   }
 }

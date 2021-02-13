@@ -37,7 +37,6 @@ export class HighlightDirective implements OnChanges {
   }
 
   updateStyles(): void {
-
     if (!this.currentCharPosition) {
       this.highlight.style.display = 'none';
       return;
@@ -51,10 +50,7 @@ export class HighlightDirective implements OnChanges {
       if (element.tagName) {
         continue;
       }
-      
-
       const range = this.documentRef.createRange();
-
       range.setStart(this.treeWalker.currentNode, this.currentCharPosition.charIndex);
       range.setEnd(this.treeWalker.currentNode,  this.currentCharPosition.charIndex +  this.currentCharPosition.charLength);
 
